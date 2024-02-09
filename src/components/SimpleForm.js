@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Toast from "./Toast";
 
 const SimpleForm = ({
   data1,
@@ -8,6 +9,10 @@ const SimpleForm = ({
   setFormData,
   initialState,
 }) => {
+  const [showSuccessToast, setShowSuccessToast] = useState(false);
+  const [showUpdateSuccessToast, setUpdateShowSuccessToast] = useState(false);
+  const [showErrorToast, setShowErrorToast] = useState(false);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -25,6 +30,11 @@ const SimpleForm = ({
           formData
         );
         console.log(`Data updated successfully`);
+        setUpdateShowSuccessToast(true);
+
+        setTimeout(() => {
+          setUpdateShowSuccessToast(false);
+        }, 1500);
       } else {
         setFormData(initialState);
         // Send POST request to add new data
@@ -33,6 +43,11 @@ const SimpleForm = ({
           formData
         );
         console.log("Data added successfully");
+        setShowSuccessToast(true);
+
+        setTimeout(() => {
+          setShowSuccessToast(false);
+        }, 1500);
       }
       // Refresh data1 after submission
       const response = await axios.get(
@@ -41,11 +56,27 @@ const SimpleForm = ({
       setData1(response.data);
     } catch (error) {
       console.error("Error submitting form data:", error);
+
+      setShowErrorToast(true);
+
+      setTimeout(() => {
+        setShowErrorToast(false);
+      }, 1500);
     }
   };
 
   return (
     <div className="w-1/3 mx-auto max-h-96 p-6 bg-gray-100 rounded-md shadow-md">
+      {showSuccessToast && (
+        <Toast message="Form submitted successfully!" bgColor="green" />
+      )}
+
+      {showUpdateSuccessToast && (
+        <Toast message="Form updated successfully!" bgColor="green" />
+      )}
+      {showErrorToast && (
+        <Toast message="Something Wrong !...." bgColor="red" />
+      )}
       <h2 className="text-lg font-semibold mb-4">Simple Form</h2>
       <form onSubmit={handleSubmit} className="text-sm">
         <div className="mb-4">
@@ -82,6 +113,7 @@ const SimpleForm = ({
             onChange={handleChange}
             className="w-full px-3 py-1 border rounded-md focus:outline-none focus:border-blue-500"
             required
+            autoComplete="email"
           />
         </div>
         <div className="mb-4">
@@ -94,6 +126,7 @@ const SimpleForm = ({
             onChange={handleChange}
             className="w-full px-3 py-1 border rounded-md focus:outline-none focus:border-blue-500"
             required
+            autoComplete="new-password"
           />
         </div>
         <div className="mb-4">
@@ -106,6 +139,7 @@ const SimpleForm = ({
             onChange={handleChange}
             className="w-full px-3 py-1 border rounded-md focus:outline-none focus:border-blue-500"
             required
+            autoComplete="new-password"
           />
         </div>
         <button

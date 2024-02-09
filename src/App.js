@@ -7,7 +7,6 @@ import "./App.css";
 // import Footer from "./components/Footer";
 import Form from "./components/SimpleForm";
 import Table from "./components/Table";
-import { Element } from "react-scroll";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -29,7 +28,9 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("https://linkhub-datatransfer-service.onrender.com/userData");
+        const response = await axios.get(
+          "https://linkhub-datatransfer-service.onrender.com/userData"
+        );
 
         const result = response.data;
 
@@ -44,10 +45,6 @@ function App() {
 
     fetchData();
   }, []);
-
-  function printData() {
-    console.log(data1);
-  }
 
   if (loading) {
     return (

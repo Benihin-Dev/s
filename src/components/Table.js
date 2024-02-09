@@ -1,15 +1,33 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Toast from "./Toast";
 
 const Table = ({ data1, setData1, formData, setFormData }) => {
+  const [showDeleteSuccessToast, setDeleteShowSuccessToast] = useState(false);
+  const [showErrorToast, setShowErrorToast] = useState(false);
+
   const handleDelete = async (name) => {
     try {
-      await axios.delete("https://linkhub-datatransfer-service.onrender.com/userData/" + name);
+      await axios.delete(
+        "https://linkhub-datatransfer-service.onrender.com/userData/" + name
+      );
       console.log("Data Deleted successfully");
-      const response = await axios.get("https://linkhub-datatransfer-service.onrender.com/userData");
+      setDeleteShowSuccessToast(true);
+
+      setTimeout(() => {
+        setDeleteShowSuccessToast(false);
+      }, 1500);
+      const response = await axios.get(
+        "https://linkhub-datatransfer-service.onrender.com/userData"
+      );
       setData1(response.data);
     } catch (error) {
       console.error("Error submitting form data:", error);
+      setShowErrorToast(true);
+
+      setTimeout(() => {
+        setShowErrorToast(false);
+      }, 1500);
     }
   };
 
@@ -68,6 +86,10 @@ const Table = ({ data1, setData1, formData, setFormData }) => {
 
   return (
     <div className="w-2/3 mx-auto p-6 bg-gray-100 rounded-md shadow-md">
+      {showDeleteSuccessToast && (
+        <Toast message="Form Deleted successfully!" bgColor="green" />
+      )}
+      {showErrorToast && <Toast message="Something Wrong !.." bgColor="red" />}
       <h2 className="text-lg  font-semibold">Details of Customers</h2>
       <table className="w-full border-collapse">
         <thead>
