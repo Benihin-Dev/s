@@ -88,7 +88,7 @@ const SimpleForm = ({
           <input
             type="password"
             id="password"
-            name="new-password"
+            name="password"
             placeholder="Password"
             value={formData.password}
             onChange={handleChange}
@@ -100,7 +100,7 @@ const SimpleForm = ({
           <input
             type="password"
             id="confirmPassword"
-            name="new-confirmPassword"
+            name="confirmPassword"
             placeholder=" Confirm Password"
             value={formData.confirmPassword}
             onChange={handleChange}
