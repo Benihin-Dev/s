@@ -1,17 +1,36 @@
 import "./App.css";
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { Routes, Route } from "react-router-dom";
+import MainPage from "./components/mainPageComponents/MainPage";
+import { MainPageDataProvider } from "./components/mainPageComponents/MainPageDataProvider";
+import Blue from "./components/portfolioComponents/blueComponents/BlueMainPage";
+import Pink from "./components/portfolioComponents/pinkComponents/PinkMainPage";
+import Purple from "./components/portfolioComponents/purpleComponents/PurpleMainPage";
+import Yellow from "./components/portfolioComponents/yellowComponents/YellowMainPage";
+import Green from "./components/portfolioComponents/greenComponents/GreenMainPage";
+import DarkBlue from "./components/portfolioComponents/blueDarkComponents/BlueDarkMainPage";
+import DarkYellow from "./components/portfolioComponents/yellowDarkComponents/YellowDarkMainPage";
+import DarkGreen from "./components/portfolioComponents/greenDarkComponents/GreenDarkMainPage";
+import DarkPink from "./components/portfolioComponents/pinkDarkComponents/pinkDarkMainPage";
+import DarkWhite from "./components/portfolioComponents/whiteDarkComponents/WhiteDarkMainPage";
 
 function App() {
   return (
     <>
-      <div className="w-screen h-screen flex justify-center items-center">
-        <img
-          className=""
-          src="https://media.istockphoto.com/id/1348157796/vector/website-under-construction-page-web-page-under-construction-website-under-maintenance-page.jpg?s=612x612&w=0&k=20&c=vJCWlc0t7pZY3b41LciyKsXQAtcDlMqzq2M7zOsl5rI="
-          alt=""
-        />
-      </div>
+      <MainPageDataProvider>
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/blue/:id" element={<Blue />} />
+          <Route path="/pink/:id" element={<Pink />} />
+          <Route path="/yellow/:id" element={<Yellow />} />
+          <Route path="/purple/:id" element={<Purple />} />
+          <Route path="/green/:id" element={<Green />} />
+          <Route path="/darkblue/:id" element={<DarkBlue />} />
+          <Route path="/darkwhite/:id" element={<DarkWhite />} />
+          <Route path="/darkyellow/:id" element={<DarkYellow />} />
+          <Route path="/darkgreen/:id" element={<DarkGreen />} />
+          <Route path="/darkpink/:id" element={<DarkPink />} />
+        </Routes>
+      </MainPageDataProvider>
     </>
   );
 }
