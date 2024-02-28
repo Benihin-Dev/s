@@ -24,11 +24,11 @@ function App() {
           <Route path="/yellow/:id" element={<Yellow />} />
           <Route path="/purple/:id" element={<Purple />} />
           <Route path="/green/:id" element={<Green />} />
-          <Route path="/darkblue/:id" element={<DarkBlue />} />
-          <Route path="/darkwhite/:id" element={<DarkWhite />} />
-          <Route path="/darkyellow/:id" element={<DarkYellow />} />
-          <Route path="/darkgreen/:id" element={<DarkGreen />} />
-          <Route path="/darkpink/:id" element={<DarkPink />} />
+          <Route path="/blueDark/:id" element={<DarkBlue />} />
+          <Route path="/whiteDark/:id" element={<DarkWhite />} />
+          <Route path="/yellowDark/:id" element={<DarkYellow />} />
+          <Route path="/greenDark/:id" element={<DarkGreen />} />
+          <Route path="/pinkDark/:id" element={<DarkPink />} />
         </Routes>
       </MainPageDataProvider>
     </>
