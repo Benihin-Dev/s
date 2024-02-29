@@ -4,7 +4,7 @@ function EducationList({ educationData }) {
   {
     return educationData.map((data, index) =>
       index % 2 === 0 ? (
-        <div key={data._id} className="mt-5 w-full flex justify-start animate-child">
+        <div key={index} className="mt-5 w-full flex justify-start animate-child">
           <div className=" w-full md:w-7/12  rounded-2xl mx-5 border border-blue-300 hover:border-blue-500  px-6 py-2 shadow-sm shadow-blue-200 hover:shadow-blue-300">
             <div className="flex mx-auto justify-between">
               <div>

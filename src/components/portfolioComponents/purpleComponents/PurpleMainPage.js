@@ -10,7 +10,6 @@ import { Element } from "react-scroll";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
-
 function PurpleMainPage() {
   const InitialData = {
     about: {
@@ -18,8 +17,9 @@ function PurpleMainPage() {
       titleName: "Software Engineer",
       description:
         "Experienced software dsoftware Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam reprehenderit repellat odit expedita soluta molestiae numquam, rem esse, repellendus, maiores nulla architecto facilis? Hic rem repellendus reiciendis sint recusandae quae. develope ",
-      profile:"https://snapfolioprofilepics.s3.amazonaws.com/e78a3bf5dc61f62ec73b8f006054660a.png",
-        // "https://png.pngtree.com/png-vector/20230728/ourmid/pngtree-profile-picture-png-image_6985293.png",
+      profile:
+        "https://snapfolioprofilepics.s3.amazonaws.com/e78a3bf5dc61f62ec73b8f006054660a.png",
+      // "https://png.pngtree.com/png-vector/20230728/ourmid/pngtree-profile-picture-png-image_6985293.png",
       cv: "https://png.pngtree.com/png-vector/20230728/ourmid/pngtree-profile-picture-png-image_6985293.png",
       userid: "123456789",
     },

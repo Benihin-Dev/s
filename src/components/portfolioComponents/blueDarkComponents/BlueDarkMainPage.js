@@ -158,6 +158,7 @@ function BlueDarkMainPage() {
           );
           setData(response.data);
           setLoading(false);
+          
         } catch (error) {
           setError(true);
           console.error("Error fetching header data:", error);

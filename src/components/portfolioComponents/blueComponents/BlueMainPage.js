@@ -148,7 +148,7 @@ export default function BlueMainPage() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    if (id !== undefined || null) {
+    if (id !== undefined || null ) {
       setLoading(true);
       const fetchData = async () => {
         try {

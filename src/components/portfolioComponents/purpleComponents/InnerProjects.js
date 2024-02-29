@@ -1,5 +1,5 @@
 import React from "react";
-import {useEffect} from "react";
+import { useEffect } from "react";
 
 export default function InnerProjects({ projectData }) {
   useEffect(() => {
@@ -20,9 +20,9 @@ export default function InnerProjects({ projectData }) {
       <div
         className={`w-full md:mx-0 k animate-parent2 flex items-center shadow-md shadow-purple-300 h-80`}
       >
-        {projectData.map((data) => (
+        {projectData.map((data, index) => (
           <div
-            key={data._id}
+            key={index}
             className="animate-child2 slide-in min-w-52 max-w-80 mx-4 md:min-w-64 pb-4 px-5 rounded-2xl hover:border-orange-400 border border-orange-300 shadow-md shadow-purple-200 hover:shadow-purple-300"
           >
             <div className="flex mx-auto w-full my-3 justify-between">

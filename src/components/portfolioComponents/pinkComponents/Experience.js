@@ -31,8 +31,8 @@ export default function Experience({ experienceData }) {
 
           <div className=" w-full flex justify-end">
             <div className="w-full sm:w-11/12 sm:grid-cols-2  sm:grid h-96 overflow-x-hidden overflow-y-scroll experienceComponent">
-              {experienceData.map((data) => (
-                <div key={data._id} className="w-11/12 rounded-2xl my-4 md:mx-5 border md:min-h-24 md:max-h-52 overflow-hidden hover:border-blue-400 border-pink-200 shadow-lg pb-2 sm:pb-8 hover:shadow-pink-300">
+              {experienceData.map((data,index) => (
+                <div key={index} className="w-11/12 rounded-2xl my-4 md:mx-5 border md:min-h-24 md:max-h-52 overflow-hidden hover:border-blue-400 border-pink-200 shadow-lg pb-2 sm:pb-8 hover:shadow-pink-300">
                   <h1 className="tracking-widest bg-pink-400 pt-5 px-3 text-white">
                    {data.title}
                   </h1>
