@@ -29,13 +29,12 @@ export default function FinalLinkProviderComponent() {
               className="mt-1 block w-full px-3 py-1 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 hover:border-indigo-400 sm:text-sm"
               autoComplete="name"
               readOnly
-              value={`https://snap-folio-23lpwpzx4-benihins-projects.vercel.app/${selectedTemplet}/${userData.about.userid}`}
+              value={`https://snap-folio-flfvk6cyc-benihins-projects.vercel.app/${selectedTemplet}/${userData.about.userid}`}
             />
             <FaRegCopy
               onClick={() => {
-                const linkToCopy = `https://snap-folio-23lpwpzx4-benihins-projects.vercel.app/${selectedTemplet}/${userData.about.userid}`;
+                const linkToCopy = `https://snap-folio-flfvk6cyc-benihins-projects.vercel.app/${selectedTemplet}/${userData.about.userid}`;
                 clipboardy
-                  // dfbfdb
                   .write(linkToCopy)
                   .then(() => {
                     setcopyIconColour(" text-indigo-300");
