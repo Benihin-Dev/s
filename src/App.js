@@ -19,6 +19,7 @@ function App() {
       <MainPageDataProvider>
         <Routes>
           <Route path="/" element={<MainPage />} />
+          <Route path="/blue" element={<Blue />} />
           <Route path="/blue/:id" element={<Blue />} />
           <Route path="/pink/:id" element={<Pink />} />
           <Route path="/yellow/:id" element={<Yellow />} />
