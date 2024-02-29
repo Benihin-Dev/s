@@ -35,6 +35,7 @@ export default function FinalLinkProviderComponent() {
               onClick={() => {
                 const linkToCopy = `https://snap-folio-23lpwpzx4-benihins-projects.vercel.app/${selectedTemplet}/${userData.about.userid}`;
                 clipboardy
+                  // dfbfdb
                   .write(linkToCopy)
                   .then(() => {
                     setcopyIconColour(" text-indigo-300");
