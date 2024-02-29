@@ -16,6 +16,7 @@
     "react-scroll": "^1.9.0",
     "react-transition-group": "^4.4.5",
     "react-typed": "^2.0.12",
+    "vercel": "^33.5.3",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
